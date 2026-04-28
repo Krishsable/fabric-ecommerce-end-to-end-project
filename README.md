@@ -83,4 +83,48 @@ Screenshots available in:
 
 ---
 
+## 🚀 Day 2 — Bronze to Silver Transformation
+
+### 🔹 Data Engineering Work
+
+* Created Bronze layer using shortcuts from centralized raw data
+* Implemented Silver layer transformations using PySpark Notebook
+* Performed data cleaning and validation:
+
+  * Removed null and invalid values
+  * Filtered negative payment values
+  * Handled duplicate records
+  * Standardized date formats using explicit parsing
+
+---
+
+### 🛠️ Tools & Technologies Used
+
+* Microsoft Fabric Lakehouse
+* PySpark (Notebook)
+* OneLake Shortcuts
+* SQL Analytics Endpoint (for validation queries)
+
+---
+
+### 📸 Proof of Work
+
+* Notebook transformations (data loading, cleaning, casting)
+* Silver tables preview
+* Validation queries ensuring data quality
+* Screenshots available in:
+
+  * `screenshots/notebook/`
+  * `screenshots/silver/`
+
+---
+
+### 🧠 Key Learnings
+
+* Importance of keeping raw data unchanged (ELT approach)
+* Handling dirty data using explicit transformations
+* Managing schema using controlled casting instead of inference
+* Validating data after transformation to ensure quality
+
+
 ⭐ This project is being built as part of my Data Engineering learning journey.
