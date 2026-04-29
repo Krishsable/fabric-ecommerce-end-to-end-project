@@ -1,1 +1,5 @@
 Blob → Pipeline → Lakehouse (Raw) → (Future: Silver → Gold)
+
+Bronze → Shortcut from central workspace
+Silver → PySpark cleaning + joins
+Gold → (to be implemented)
