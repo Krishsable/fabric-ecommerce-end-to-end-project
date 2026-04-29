@@ -127,4 +127,36 @@ Screenshots available in:
 * Validating data after transformation to ensure quality
 
 
+## 🚀 Day 3 — Data Enrichment & Joins
+
+### 🔹 Data Engineering Work
+
+* Performed multi-table joins across orders, customers, payments, and order items
+* Aggregated payment data at order level
+* Created enriched Silver table with business-ready columns
+* Applied null handling and validation checks
+
+### 🛠️ Tools & Technologies Used
+
+* Microsoft Fabric Lakehouse
+* PySpark (Notebook)
+* SQL (validation)
+
+### 📸 Proof of Work
+
+* Join transformations
+* Aggregation logic
+* Final enriched dataset
+* Screenshots available in:
+
+  * `screenshots/lakehouse/`
+  * `screenshots/notebook/`
+  * `screenshots/sql_checks/`
+
+### 🧠 Key Learnings
+
+* Importance of join strategies (inner vs left)
+* Building analytics-ready datasets from multiple sources
+
+
 ⭐ This project is being built as part of my Data Engineering learning journey.
