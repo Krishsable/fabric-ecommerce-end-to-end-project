@@ -159,4 +159,52 @@ Screenshots available in:
 * Building analytics-ready datasets from multiple sources
 
 
+## 🚀 Day 4 — Incremental Load & MERGE Implementation
+
+### 🔹 Work Done
+
+* Implemented incremental data loading using MERGE operation
+* Added audit columns:
+
+  * `insert_ts` → record creation timestamp
+  * `update_ts` → record last update timestamp
+* Designed upsert logic using `order_id` as the primary key (based on order-level data grain)
+* Applied conditional update logic to avoid unnecessary updates when data remains unchanged
+
+---
+
+### 🔹 Key Logic Implemented
+
+* Used temporary view to enable SQL-based MERGE
+* Handled:
+
+  * **Insert scenario** → new records added with both timestamps
+  * **Update scenario** → existing records updated with refreshed `update_ts` only
+* Ensured `insert_ts` remains unchanged for existing records
+
+---
+
+### 🔹 Important Concepts Covered
+
+* Incremental data processing vs full reload
+* Data grain and its impact on MERGE key selection
+* Difference between append, overwrite, and merge
+* Audit column management in data pipelines
+* Change detection logic in MERGE
+
+---
+
+### 🔹 Outcome
+
+* Built an idempotent pipeline that avoids duplicate data
+* Optimized processing by updating only changed records
+* Improved pipeline efficiency and scalability
+
+---
+
+* Screenshots available in:
+
+  * `screenshots/pipeline/`
+
+
 ⭐ This project is being built as part of my Data Engineering learning journey.
