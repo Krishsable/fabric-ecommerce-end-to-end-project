@@ -207,4 +207,64 @@ Screenshots available in:
   * `screenshots/pipeline/`
 
 
+## 📅 Day 5 — Gold Layer & KPI Development
+
+### 🔹 Work Done
+
+* Built Gold layer data model using Star Schema approach
+* Created dimension tables:
+
+  * `dim_customers`
+  * `dim_products`
+* Created fact tables:
+
+  * `fact_orders` (order-level)
+  * `fact_order_items` (product-level)
+* Maintained correct data grain for each table
+
+---
+
+### 🔹 KPI Layer
+
+* Created SQL views on top of fact and dimension tables using Lakehouse SQL endpoint
+* Implemented key business metrics:
+
+  * Category-wise revenue
+  * Orders and revenue by city/state
+  * Daily revenue trend
+  * Delivery status summary
+
+---
+
+### 🔹 Tools Used
+
+* PySpark (Data modeling)
+* SQL (KPI views)
+* Microsoft Fabric Lakehouse & SQL Endpoint
+
+---
+
+### 🔹 Key Learnings
+
+* Difference between fact and dimension tables
+* Importance of data grain in modeling
+* Multi-grain design (order vs product level)
+* Using views as semantic layer for BI tools
+
+---
+
+### 🔹 Outcome
+
+* Built a business-ready Gold layer
+* Enabled flexible analytics using KPI views
+* Prepared data for direct consumption in Power BI
+
+* Screenshots available in:
+
+  * `screenshots/gold/`
+  * `screenshots/sql_endpoint/`
+  * `SQL/kpi_views`
+
+
+
 ⭐ This project is being built as part of my Data Engineering learning journey.
