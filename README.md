@@ -347,3 +347,17 @@ Screenshots available in:
   * `Pipeline/`
 
 ⭐ This project is being built as part of my Data Engineering learning journey.
+
+Project Highlights:
+✔ Designed Medallion Architecture (Bronze → Silver → Gold) using Microsoft Fabric
+✔ Implemented data ingestion using shortcuts from external storage into Lakehouse (Bronze layer)
+✔ Built data cleaning and transformation pipelines using PySpark (Silver layer)
+✔ Created enriched dataset by joining multiple sources (orders, customers, payments, items)
+✔ Implemented incremental data processing using MERGE (watermark-based approach)
+✔ Designed Star Schema with fact and dimension tables (Gold layer)
+✔ Implemented SCD Type 2 for customer dimension to track historical changes
+✔ Created business KPI views using SQL Endpoint for analytics
+✔ Built interactive Power BI dashboard with DAX measures for business insights
+✔ Orchestrated end-to-end pipeline using Fabric pipelines
+✔ Scheduled pipeline for automated daily execution
+✔ Performed data validation using controlled test scenarios (new + changed data)
