@@ -266,5 +266,84 @@ Screenshots available in:
   * `SQL/kpi_views`
 
 
+## 📅 Day 6 — SCD Type 2, Pipeline Scheduling & Dashboard
+
+### 🔹 Work Done
+
+* Implemented **SCD Type 2** on `dim_customers`
+
+  * Used **MERGE** to expire old records (`is_current = 0`, `effective_to`)
+  * Used **INSERT** to add new versions (`is_current = 1`, `effective_from`)
+  * Ensured only one active record per customer
+* Fixed issues related to:
+
+  * Column misalignment in INSERT (added explicit column mapping)
+  * NULL-safe comparisons using `<=>`
+  * Duplicate active records
+* Validated SCD2 logic using test data (customer city/state change)
+
+---
+
+### 🔹 Power BI Dashboard
+
+* Connected to Fabric Lakehouse using SQL Endpoint
+* Built business-facing dashboard:
+
+  * Category-wise revenue
+  * Orders by city/state
+  * Daily revenue trend
+  * KPI cards (Total Revenue, Total Orders)
+* Created DAX measures:
+
+  * Total Revenue
+  * Total Orders
+  * Average Order Value
+
+---
+
+### 🔹 Pipeline & Automation
+
+* Created pipeline to orchestrate notebooks:
+
+  * Silver layer processing
+  * Gold layer (dim + fact tables)
+* Configured **daily schedule trigger**
+* Enabled end-to-end automated batch processing
+
+---
+
+### 🔹 Key Concepts
+
+* Slowly Changing Dimension (Type 2)
+* Historical data tracking
+* Incremental processing using MERGE
+* Data modeling (Star Schema)
+* Pipeline orchestration & scheduling
+* BI reporting with Power BI
+
+---
+
+### 🔹 Outcome
+
+* Completed end-to-end batch data pipeline
+* Enabled historical tracking for customer dimension
+* Delivered business-ready analytics via dashboard
+* Achieved production-like workflow with automation
+
+---
+
+### 🔹 Challenges & Learnings
+
+* Understood importance of column order in INSERT statements
+* Learned NULL-safe comparisons (`<=>`) for accurate change detection
+* Handled duplicate record issues in SCD2 logic
+* Gained clarity on difference between MERGE vs INSERT roles
+
+* Screenshots available in:
+
+  * `screenshots/Incremental_loaad/`
+  * `screenshots/SCD-2/`
+  * `screenshots/pipeline`
+  * `Pipeline/`
 
 ⭐ This project is being built as part of my Data Engineering learning journey.
