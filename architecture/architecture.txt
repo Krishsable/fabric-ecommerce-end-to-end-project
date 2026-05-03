@@ -1,5 +1,64 @@
-Blob → Pipeline → Lakehouse (Raw) → (Future: Silver → Gold)
+# 📊 Data Engineering Architecture (Microsoft Fabric)
 
-Bronze → Shortcut from central workspace
-Silver → PySpark cleaning + joins
-Gold → (to be implemented)
+## 🔹 Source Layer
+
+* Raw data ingested from external source (CSV/Blob storage)
+
+---
+
+## 🔹 Ingestion Layer (Bronze)
+
+* Data stored in Lakehouse using shortcuts
+* No transformations applied
+* Schema preserved as-is
+
+---
+
+## 🔹 Processing Layer (Silver)
+
+* Data cleaned and validated using PySpark notebooks
+* Null handling, type casting, deduplication applied
+* Business logic transformations and joins performed
+* Created enriched dataset: `silver_orders_enriched`
+
+---
+
+## 🔹 Data Modeling Layer (Gold)
+
+* Designed Star Schema:
+
+  * `dim_customers` (with SCD Type 2)
+  * `dim_products`
+  * `fact_orders`
+  * `fact_order_items`
+* Aggregated and structured for analytics
+
+---
+
+## 🔹 Analytics Layer
+
+* Created KPI views using SQL Endpoint:
+
+  * Revenue by category
+  * Orders by city/state
+  * Daily revenue trends
+* Power BI dashboard built on top of views
+
+---
+
+## 🔹 Orchestration Layer
+
+* Pipeline orchestrates notebook execution:
+
+  * Silver → Gold
+* Scheduled for daily execution
+
+---
+
+## 🔹 Key Features
+
+* Incremental data processing using MERGE
+* SCD Type 2 implementation for customer dimension
+* End-to-end batch pipeline
+* Automated scheduling
+* Business-ready analytics
